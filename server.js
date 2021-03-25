@@ -30,7 +30,7 @@ app.get('/users/:id', function(req, res) {
 
 
 //POST REQUEST
-app.post('/login', function(req, res)) {
+app.post('/login', function(req, res) {
 
     const username = req.body.username;
     const password = req.body.password;
@@ -41,7 +41,7 @@ app.post('/login', function(req, res)) {
 
     if (username === mockUsername && password === mockPassword) {
         // In practice, use JSON web token sign method here to make an encrypted token
-        res.join({
+        res.json({
             success: true,
             message: 'PASSWORD AND USERNAME MATCH!',
             token: 'encrypted token goes here'
@@ -56,7 +56,7 @@ app.post('/login', function(req, res)) {
     }
 
 
-}
+})
 
 
 

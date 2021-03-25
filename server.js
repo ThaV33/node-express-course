@@ -61,6 +61,41 @@ app.post('/login', function(req, res) {
 
 
 
+//NEW ENPOINT TO ADD TWO NUMBERS
+app.get('/add', function(req, res) {
+    const { first = 0, second = 0 } = req.query
+    const total = parseInt(first) + parseInt(second)
+    res.json({
+        success: true,
+        total: total
+    })
+})
+
+
+//NEW ENPOINT TO SUBTRACT TWO NUMBERS
+app.get('/sub', function(req, res) {
+    const { first = 0, second = 0 } = req.query
+    const total = parseInt(first) - parseInt(second)
+    res.json({
+        success: true,
+        total
+    })
+})
+
+//NEW ENPOINT TO MULTIPLY TWO NUMBERS
+app.get('/multiply', function(req, res) {
+    const { first = 0, second = 0 } = req.query
+    const total = parseInt(first) * parseInt(second)
+    res.json({
+        success: true,
+        total
+    })
+})
+
+
+
+
+
 
 app.listen(8000, function() {
     console.log("Server is Running")
